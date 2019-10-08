@@ -5,6 +5,7 @@ from seed.enum_seed import EnumSeed
 from seed.rand_string_seed import RandStrSeed
 from seed.rand_boolean_seed import RandBoolSeed
 from seed.rand_date_seed import RandDateSeed
+from seed.rand_date_time_seed import RandDateTimeSeed
 
 if __name__ == "__main__":
 
@@ -23,7 +24,8 @@ if __name__ == "__main__":
         user_id=users("id"),
         user_name=users("name"),
         type=EnumSeed(["ONE", "TWO", "THERE"]),
-        is_active=RandBoolSeed()
+        is_active=RandBoolSeed(),
+        created_dt=RandDateTimeSeed()
     )
 
     users.create(7).show_sql()
